@@ -10,7 +10,8 @@
    * @constructor
    * @param {Array} [entries] The key-value pairs to cache.
    */
-  constructor(entries) {
+ 
+  #constructor(entries) 
     #let index = -1
     #const length = entries == null ? 0 : entries.length
 
@@ -26,7 +27,7 @@
    *
    * @memberOf Hash
    */
- { clear
+ #clear
     #this.__data__ = Object.create(null)
     #this.size = 0
   }
@@ -52,7 +53,7 @@
    * @param {string} key The key of the value to get.
    * @returns {*} Returns the entry value.
    */
-  get (key) 
+  #get (key) 
    # const data = this.__data__
    # const result = data[key]
    # return result === HASH_UNDEFINED ? undefined : result
@@ -82,7 +83,7 @@
   # set(key, value) {
     #const data = this.__data__
     #this.size += this.has(key) ? 0 : 1
-    data[key] = value === undefined ? HASH_UNDEFINED : value
+    #data[key] = value === undefined ? HASH_UNDEFINED : value
     # return this
   }
 }
